@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "EcoLense",
+  "version": "0.1.0",
+  "description": "EcoLense Plug-in Extension",
+  "permissions": ["declarativeContent", "storage", "http://www.ebay.com/*", "http://127.0.0.1:8000/*"],
+ 
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["math.js", "jquery-3.4.1.js", "jquery.lettering.js", "content.js", "circle_type.js"],
+    "matches": ["https://www.ebay.com/*"]
+  }],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "icons": { "16": "images/16.png",
+  			     "32": "images/32.png",
+             "48": "images/48.png",
+           "128": "images/128.png" }
+}

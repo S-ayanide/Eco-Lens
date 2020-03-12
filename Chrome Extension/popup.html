@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Water Popup</title>
+    <script type='text/javascript' src='jquery-3.4.1.js'></script>
+    <script type='text/javascript' src='content.js'></script>
+    <script type='text/javascript' src='chart.js'></script>
+    <script type='text/javascript' src='popup.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <style>
+      body {
+        text-align: center;
+        width : 500px;
+        height: 570px;
+      }
+
+      #hydrateImage {
+        width: 100px;
+        margin: 5px;
+      }
+
+      button {
+        margin: 5px;
+        outline: none;
+      }
+
+      button:hover {
+        outline: #80DEEA dotted thick;
+      }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+  </head>
+  <body>    
+      <!-- An Alarm delay of less than the minimum 1 minute will fire
+      in approximately 1 minute incriments if released -->
+      <p style="font-size:20"><strong>Your Eco-footprint!</strong></p>
+      <div id='eco_score'></div>
+
+      <div class="container">
+        <div>
+            <canvas id="mychart"></canvas>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <canvas id="mychart2"></canvas>
+        </div>
+    </div>
+
+</body></html>
+
+
