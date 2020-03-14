@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
  
-  "name": "EcoLense",
+  "name": "EcoLens",
   "version": "0.1.0",
-  "description": "EcoLense Plug-in Extension",
+  "description": "EcoLens Plug-in Extension",
   "permissions": ["declarativeContent", "storage", "http://www.ebay.com/*", "http://127.0.0.1:8000/*"],
  
   "content_scripts": [{
