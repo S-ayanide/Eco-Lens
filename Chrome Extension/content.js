@@ -11,10 +11,17 @@ if (products.length == 0) {
 
 var color = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "ten"];
 
+function testing(){
+  const testURL = "http://127.0.0.1:8000/test"
+  $.get(testURL, function(data, status){
+    alert(data)
+  })
+}
+
 var userData
 function getUserData(){
 	const Url = "http://127.0.0.1:8000/userData/";
-  const Sdata = '{"user_email":"david"}';
+  const Sdata = '{"user_email":"david"}'; 
 	$.post(Url, Sdata, function(data){
     userData = data
   })
@@ -37,6 +44,8 @@ for (var i = 0, l = products.length; i < l; i++) {
 	});
 
 }
+
+console.log()
 
 var countries = ["China", "USA", "Canada", "Spain", "France", "Italy", "Switzerland"]
 var r = Math.abs(Math.random()*7)

@@ -1,4 +1,5 @@
 import requests
+import pickle
 from bs4 import BeautifulSoup
 
 r = requests.get('https://www.ebay.com/')
@@ -18,5 +19,8 @@ for resultRow in resultsRow:
         'itemURL': itemURL,
         'itemDesc': itemDesc        
     })
+
+with open('data','wb') as item_data:
+    pickle.dump(results, item_data)
 
 print(results)

@@ -8,7 +8,7 @@
  
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["math.js", "jquery-3.4.1.js", "jquery.lettering.js", "content.js", "circle_type.js"],
+    "js": ["math.js", "jquery-3.4.1.js", "jquery.lettering.js", "content.js", "circle_type.js","test.js"],
     "matches": ["https://www.ebay.com/*"]
   }],
 
