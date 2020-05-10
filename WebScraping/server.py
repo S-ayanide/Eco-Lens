@@ -6,9 +6,8 @@ app = Flask(__name__)
 def starting():
     return "Server is up and running"
 
-@app.route('/hello', methods=['GET', 'POST'])
-def hello():
-
+@app.route('/test/', methods=['GET', 'POST'])
+def test():
     # POST request
     if request.method == 'POST':
         print('Incoming..')
@@ -22,7 +21,7 @@ def hello():
 
 if __name__ == '__main__':
 
-    with open('data','rb') as item_data:
+    with open('./Data/homescreen_data','rb') as item_data:
         results = pickle.load(item_data)
         print(results)
 

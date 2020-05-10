@@ -11,16 +11,16 @@ resultsRow = soup.find_all('a', {'class': 'hl-item__link'})
 results = []
 
 for resultRow in resultsRow:
-    itemURL = resultRow.get('href')    
-    itemDesc = resultRow.select('img')[0].get('alt')    
+    itemURL = resultRow.get('href')
+    itemDesc = resultRow.select('img')[0].get('alt')
 
     # Once formatted, the data are then appended to the results list
     results.append({
         'itemURL': itemURL,
-        'itemDesc': itemDesc        
+        'itemDesc': itemDesc
     })
 
-with open('data','wb') as item_data:
-    pickle.dump(results, item_data)
+# with open('../Data/homescreen_data','wb') as item_data:
+#     pickle.dump(results, item_data)
 
 print(results)
