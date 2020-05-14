@@ -13,5 +13,5 @@ for url in url:
     soup = BeautifulSoup(item_url.text, 'html.parser')
 
     # Extracting individual Attribute Labels to check for Country, Distance and Materials
-    item_attrs = soup.find_all('td', {'class': 'attrLabels'})
+    item_attrs = soup.get('div', {'class': 'sh-loc active sel'})
     print(item_attrs)
