@@ -35,7 +35,10 @@ def main():
                                         id integer PRIMARY KEY,
                                         image text,
                                         name text NOT NULL,
-                                        url text NOT NULL                                        
+                                        url text NOT NULL,
+                                        country text NOT NULL,
+                                        distance number NOT NULL,
+                                        Material text NOT NULL                                       
                                     ); """
 
     # create a database connection
