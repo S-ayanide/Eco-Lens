@@ -1,19 +1,13 @@
 import requests
 import pickle
 from bs4 import BeautifulSoup
-from countryList import country
+from calculateRating import compute
 
 # Loading Saved Dataset
 with open('../Data/search_circle', 'rb') as item_data:
     search_circle_data = pickle.load(item_data)
 
 item_details = []  # empty array to store all the item url lists
-
-# Dummy Data
-materials = []
-distance = []
-print(country)
-
 # Search Item
 for item in search_circle_data:
 
@@ -40,14 +34,17 @@ for item in search_circle_data:
         product_detail_image = individual_product.select(
             'div')[1].find('img').get('src')
 
+        result = compute()  # Algorithm to calculate parameters on the Product
         # Storing the item url list into a JSON file using Pickle
         item_details.append({
             'item_url': product_detail_url,
             'item_name': product_name,
-            'item_image': product_detail_image
+            'item_image': product_detail_image,
+            'country': result[1],
+            'material': result[2],
+            'distance': result[0],
+            'eco_rating': result[3]
         })
-
-        break
 
         with open('../Data/item_details_url', 'wb') as item_data:
             pickle.dump(item_details, item_data)
