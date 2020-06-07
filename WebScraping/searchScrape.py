@@ -1,12 +1,18 @@
 import requests
 import pickle
 from bs4 import BeautifulSoup
+from countryList import country
 
 # Loading Saved Dataset
 with open('../Data/search_circle', 'rb') as item_data:
     search_circle_data = pickle.load(item_data)
 
 item_details = []  # empty array to store all the item url lists
+
+# Dummy Data
+materials = []
+distance = []
+print(country)
 
 # Search Item
 for item in search_circle_data:
@@ -45,4 +51,3 @@ for item in search_circle_data:
 
         with open('../Data/item_details_url', 'wb') as item_data:
             pickle.dump(item_details, item_data)
-
