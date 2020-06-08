@@ -36,12 +36,15 @@ for item in search_circle_data:
 
         result = compute()  # Algorithm to calculate parameters on the Product
         # Storing the item url list into a JSON file using Pickle
+
+        all_materials = ';'.join(result[2])
+
         item_details.append({
             'item_url': product_detail_url,
             'item_name': product_name,
             'item_image': product_detail_image,
             'country': result[1],
-            'material': result[2],
+            'material': all_materials,
             'distance': result[0],
             'eco_rating': result[3]
         })

@@ -38,7 +38,8 @@ def main():
                                         url text NOT NULL,
                                         country text NOT NULL,
                                         distance number NOT NULL,
-                                        Material text NOT NULL                                       
+                                        Material text NOT NULL,
+                                        eco_score text NOT NULL
                                     ); """
 
     # create a database connection
