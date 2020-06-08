@@ -22,6 +22,7 @@ def compute():
 
     get_material_type = random.randint(0, 4)
     material_value = 0
+    classify = ''
 
     if get_material_type == 0:
         material_value = 0

@@ -26,8 +26,8 @@ def insert_product(conn, product):
     :param product:
     :return: product id
     """
-    sql = ''' INSERT INTO product(name,image,url)
-              VALUES(?,?,?) '''
+    sql = ''' INSERT INTO product(name,image,url,country,distance,Material,eco_score)
+              VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, product)
     return cur.lastrowid
@@ -53,11 +53,16 @@ def main():
             # add product items
             for item in items:
                 product = (item['item_name'],
-                           item['item_image'], item['item_url'])
+                           item['item_image'],
+                           item['item_url'],
+                           item['country'],
+                           item['distance'],
+                           item['material'],
+                           item['eco_rating'])
                 product_id = insert_product(conn, product)
     except Error as e:
         print(e)
 
 
 if __name__ == '__main__':
-    fetchData()
+    main()
