@@ -1,11 +1,10 @@
-from flask import Flask
-import time
+from flask import Flask, jsonify
 import pickle
 app = Flask(__name__)
 
-@app.route('/time', methods=['GET', 'POST'])
-def get_time():
-    
-    # GET request    
-    return {'time': time.time()}        
-    
+
+@app.route('/products', methods=['GET', 'POST'])
+def get_products():
+
+    # GET request
+    return jsonify({'test': "Product"})
